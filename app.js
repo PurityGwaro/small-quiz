@@ -7,6 +7,13 @@ const form = document.querySelector('.quiz-form');
 const result = document.querySelector('.result');
 //console.log(result);
 
+form.addEventListener('click', e=>{
+    let sibling = e.target.nextElementSibling;
+    console.log(sibling);
+    sibling.style.color = 'black';
+    sibling.reset();
+})
+
 //listen for the submit
 form.addEventListener('submit', e =>{
     e.preventDefault();//prevent default action of the submit event which is to refresh the page
@@ -39,11 +46,8 @@ form.addEventListener('submit', e =>{
         }else{
             output++;
         }
-
     }, 20);
-
 });
-
 
 //window object- is the global object in frontend Js. It is the mother of all objects
 //console.log('hello');//this is same as saying:
